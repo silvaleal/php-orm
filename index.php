@@ -15,7 +15,7 @@ $database = new Database(); # Classe que fica salvo o método de conectar com o 
 $model = new User($database);
 
 // $model->select()
-//         ->join('guilds', 'users.id = guilds.owner_id')
+//         ->innerJoin('guilds', 'users.id = guilds.owner_id')
 //         ->where('id', 1);
 
 // print_r($model->first());

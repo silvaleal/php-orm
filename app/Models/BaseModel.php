@@ -57,7 +57,7 @@ class BaseModel
         return $this;
     }
 
-    public function join($table, $join)
+    public function innerJoin($table, $join)
     {
         $this->query .= " INNER JOIN $table ON $join";
         return $this;
