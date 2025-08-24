@@ -32,6 +32,25 @@ class BaseModel
         return $this;
     }
 
+    public function update(array $arr)
+    {
+        $sets = [];
+        foreach ($arr as $key => $value) {
+            $sets[] = "$key => $value";
+        }
+
+        $sets = implode(', ', $sets);
+
+        $this->query .= "UPDATE FROM $this->table SET $sets";
+        return $this;
+    }
+
+    public function delete()
+    {
+        $this->query .= "DELETE FROM $this->table";
+        return $this;
+    }
+
     public function where($column, $value)
     {
         $this->query .= " WHERE $this->table.$column = $value";
